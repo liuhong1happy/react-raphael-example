@@ -40,19 +40,6 @@ module.exports = {
       //browser: 'chromium-browser' // mac调试时需要注释该行
     })
   ],
-  devServer: {
-    hot: true,
-    proxy: {
-      '/api/*': {
-          target: 'http://localhost:8009',
-          secure: false
-      },
-      '/static/*': {
-          target: 'http://localhost:8009',
-          secure: false
-      }
-    }
-  },
   module: {
     loaders: [{
       test: /\.js$/,

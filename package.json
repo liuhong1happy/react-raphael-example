@@ -10,7 +10,7 @@
     "raphael": "^2.2.6",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-raphael": "^0.2.0-rc5"
+    "react-raphael": "^0.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
