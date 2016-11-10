@@ -3,9 +3,11 @@ require('es5-shim/es5-sham');
 require('console-polyfill');
 require('../less/index.less');
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const {Paper,Set,Circle} = require('./react-raphael');
+window.React = require('react');
+window.ReactDOM = require('react-dom');
+window.Raphael = require('raphael');
+
+const {Paper,Set,Circle,Ellipse,Image,Rect,Text,Path} = require('react-raphael');
 
 class App extends React.Component{
     render(){
@@ -14,10 +16,18 @@ class App extends React.Component{
                        <Set>    
                         {
                             data.map(function(ele,pos){
-                                return (<Circle x={ele.x} y={ele.y} r={ele.r} />)
+                                return (<Circle key={pos} x={ele.x} y={ele.y} r={ele.r} />)
                             })
                         }
                         </Set>
+						<Set>
+							<Image src="/static/images/5circle.png" x={100} y={170} width={90} height={60} />
+							<Ellipse x={150} y={200} ry={30} rx={100} />
+							<Rect x={30} y={150} width={240} height={150} />
+							<Text x={150} y={250} text="同一个世界 同一个梦想" />
+							<Text x={150} y={270} text="One World One Dream" />
+							<Path d={["M80 290L220 290"]} />
+						</Set>
                 </Paper>)
     }
 }
