@@ -10,7 +10,7 @@
     "raphael": "^2.2.6",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-raphael": "^0.2.2"
+    "react-raphael": "^0.3.0-rc1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -36,5 +36,6 @@
     "start": "webpack-dev-server --devtool eval --progress --hot --host 0.0.0.0 --config webpack.dev.config.js",
     "build": "webpack --devtool cheap-module-source-map --progress --color --profile --config webpack.pro.config.js --watch"
   },
-  "author": "Holly Liu"
+  "author": "Holly Liu",
+  "license": "MIT"
 }

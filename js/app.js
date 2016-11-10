@@ -29,7 +29,7 @@ class App extends React.Component{
 						<Set>
                             <Rect x={30} y={148} width={240} height={150} attr={{"fill":"#10a54a","stroke":"#f0c620","stroke-width":5}}/>
 							<Ellipse x={150} y={198} ry={40} rx={100} attr={{"fill":"#fff","stroke":"#e11032"}} glow={{width:10,fill:true,color:"#0b8ac9",opacity:1}}/>
-                            <Image src="/static/images/5circle.png" x={100} y={170} width={90} height={60} />
+                            <Image src="static/images/5circle.png" x={100} y={170} width={90} height={60} />
 							<Text x={150} y={258} text="同一个世界 同一个梦想" attr={{"fill":"#fff"}}/>
 							<Text x={150} y={273} text="One World One Dream" attr={{"fill":"#fff"}}/>
 							<Path d={["M80 287L220 287"]} attr={{"stroke":"#fff"}}/>
