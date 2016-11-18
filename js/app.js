@@ -6,7 +6,7 @@ require('../less/index.less');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-const {Raphael,Paper,Set,Circle,Ellipse,Image,Rect,Text,Path} = require('react-raphael');
+const {Raphael,Paper,Set,Circle,Ellipse,Image,Rect,Text,Path,Line} = require('react-raphael');
 
 class App extends React.Component{
     render(){
@@ -31,7 +31,8 @@ class App extends React.Component{
                             <Image src="static/images/5circle.png" x={100} y={170} width={90} height={60} />
 							<Text x={150} y={258} text="同一个世界 同一个梦想" attr={{"fill":"#fff"}}/>
 							<Text x={150} y={273} text="One World One Dream" attr={{"fill":"#fff"}}/>
-							<Path d={["M80 287L220 287"]} attr={{"stroke":"#fff"}}/>
+							<Path d={["M150 287L150 287"]} animate={Raphael.animation({"path": ["M80 287L220 287"]},500,"<>")} attr={{"stroke":"#fff"}}/>
+                            <Line x1={150} y1={290} x2={150} y2={290} animate={Raphael.animation({ x1:80, x2:220},500,"<>")} attr={{"stroke":"#fff"}}/>
 						</Set>
                 </Paper>)
     }
