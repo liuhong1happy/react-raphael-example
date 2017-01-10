@@ -8,7 +8,7 @@ var ReactDOM = require('react-dom');
 
 const {Raphael,Paper,Set,Circle,Ellipse,Image,Rect,Text,Path,Line} = require('react-raphael');
 
-class App extends React.Component{
+class Simple extends React.Component{
     render(){
         var data = [
             {x:50,y:50,r:40,attr:{"stroke":"#0b8ac9","stroke-width":5},animate:Raphael.animation({cx:60},500,"<>")},
@@ -38,4 +38,57 @@ class App extends React.Component{
     }
 }
 
-ReactDOM.render(<App />,document.getElementById("react-container"));
+
+class Paths extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          data:[
+            {path:["M10 10L220 10"],attr:{"stroke":"#f0c620","stroke-width":5}},
+            {path:["M10 30L220 30"],attr:{"stroke":"#f0c620","stroke-width":5}},
+            {path:["M10 50L220 50"],attr:{"stroke":"#f0c620","stroke-width":5}},
+            {path:["M10 70L220 70"],attr:{"stroke":"#f0c620","stroke-width":5}},
+            {path:["M10 90L220 90"],attr:{"stroke":"#f0c620","stroke-width":5}}
+            ]
+        }
+    }
+    handleHoverIn(e) {
+       const {self,index} = this.items;
+       const { data } = self.state;
+       data.forEach((p,i)=>{
+           if(i!=index) 
+            p.attr.stroke = "#ddd";
+       })
+       self.setState({
+           data
+       })
+    }
+    handleHoverOut(e) {
+       const {self,index} = this.items;
+       const { data } = self.state;
+       data.forEach(p=>{
+           p.attr.stroke = "#f0c620";
+       })
+       self.setState({
+           data
+       })
+    }
+    render() {
+        const data = this.state.data;
+        const self = this;
+        return (<Paper width={300} height={300}>
+                       <Set>    
+                        {
+                            data.map(function(ele,pos){
+                                return (<Path 
+                                key={pos} d={ele.path} attr={ele.attr} data={{index: pos, self }}
+                                hover={{in:self.handleHoverIn, out:self.handleHoverOut }}
+                                />)
+                            })
+                        }
+                        </Set>
+        </Paper>);
+    }
+}
+
+ReactDOM.render(<Simple />,document.getElementById("react-container"));
