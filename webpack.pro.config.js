@@ -34,11 +34,11 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: [ 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0' ],
+      loaders: [ 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-2' ],
       exclude: /node_modules/
     },{
         test: /\.less$/,
-        loaders: ['style','css','less']
+        loaders: ['style-loader','css-loader','less-loader']
     }
     ]
   }
